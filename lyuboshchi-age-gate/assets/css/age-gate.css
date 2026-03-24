@@ -1,0 +1,104 @@
+#lyuboshchi-age-gate.lyuboshchi-age-gate {
+    position: fixed;
+    inset: 0;
+    z-index: 999999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    font-family: "Montserrat", "Segoe UI", sans-serif;
+}
+
+#lyuboshchi-age-gate.is-active {
+    display: flex;
+}
+
+.lyuboshchi-age-gate__overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(4, 4, 10, 0.84);
+    backdrop-filter: blur(6px);
+}
+
+.lyuboshchi-age-gate__modal {
+    position: relative;
+    width: min(560px, calc(100vw - 28px));
+    border-radius: 22px;
+    padding: 34px 30px 28px;
+    color: #ffffff;
+    background: radial-gradient(circle at top right, #ff005f 0%, #b0003f 35%, #340021 100%);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 24px 70px rgba(255, 0, 95, 0.4), 0 0 35px rgba(255, 255, 255, 0.16) inset;
+}
+
+.lyuboshchi-age-gate__brand {
+    display: inline-block;
+    font-weight: 800;
+    letter-spacing: 0.09em;
+    margin-bottom: 14px;
+    background: linear-gradient(135deg, #8e5bff 0%, #ff5da8 78%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-transform: uppercase;
+}
+
+.lyuboshchi-age-gate__title {
+    margin: 0;
+    font-size: clamp(26px, 3.2vw, 42px);
+    line-height: 1.1;
+    font-weight: 800;
+    text-transform: uppercase;
+    text-shadow: 0 0 22px rgba(255, 255, 255, 0.3);
+}
+
+.lyuboshchi-age-gate__text {
+    margin: 14px 0 0;
+    font-size: 17px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.lyuboshchi-age-gate__actions {
+    margin-top: 28px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.lyuboshchi-age-gate__btn {
+    border: none;
+    border-radius: 999px;
+    min-height: 52px;
+    font-size: 16px;
+    line-height: 1;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+}
+
+.lyuboshchi-age-gate__btn:hover {
+    transform: translateY(-1px);
+}
+
+.lyuboshchi-age-gate__btn--yes {
+    color: #ffffff;
+    background: linear-gradient(93deg, #ef0059 0%, #ff3292 100%);
+    box-shadow: 0 10px 24px rgba(255, 0, 95, 0.35);
+}
+
+.lyuboshchi-age-gate__btn--no {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.28);
+}
+
+@media (max-width: 560px) {
+    .lyuboshchi-age-gate__modal {
+        padding: 26px 20px 22px;
+        border-radius: 16px;
+    }
+
+    .lyuboshchi-age-gate__actions {
+        grid-template-columns: 1fr;
+    }
+}
